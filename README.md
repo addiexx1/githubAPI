@@ -1,2 +1,2 @@
-# practice comp 2406 AJAX
-search `github` users using fetch API and github users API
+# projects to practice using AJAX, XHR, Fetch, API...
+1. githubAPI : search `github` users using fetch API and github users API
