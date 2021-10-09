@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using github API to Fetch users</title>
+    <style>
+        #bio{
+            padding: 1rem;
+            margin-left: 2rem;
+        }
+    </style>
+    <!--Bootstrap CDN is a public content delivery network. It enables users to load CSS, JavaScript and images remotely from its servers.  -->
+    <!-- container, form-group, form-control, btn btn-danger btn-block...  are bootstrap classes -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"  crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" style="padding: 5rem;">
+        <h2 style = "text-align: center;">Search Github Users Using Github API</h2>
+        <form id = "myform" autocomplete="off" >
+            <br><br>
+            <div class="form-group">
+                <input type="text" id ="search" class="form-control" placeholder="Search Username" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-danger btn-block">
+                    Search User
+                </button>
+            </div>
+        </form>
+
+        <div id="dataContainer" style="display: flex;"></div>
+    </div>
+
+    <script src="githubAPI.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax get JSON file</title>
+</head>
+<body>
+    <button id = "btn">Get User.json</button>
+    <div id="user"></div>
+
+
+    <script>
+        document.getElementById('btn').addEventListener('click',loadUser);
+
+        function loadUser(){
+            //1. CREATE AN XHR OBJECT
+            let xhr = new XMLHttpRequest();
+            //2. OPEN NEW REQUEST
+            xhr.open('GET', 'user.json', true);
+
+            //3. CHECK STATUS AND DO SOMETHNNG TO THE RESPONSE
+            xhr.onload =  function(){
+                if (this.status == 200){
+                    let user = JSON.parse(this.responseText);
+                    console.log(user);
+                    let output = '';
+                    for (let u of user){
+                        output += ` <ul><li>${u.id}</li> <li>${u.name}</li></ul>`;
+                    }
+
+                    document.getElementById("user").innerHTML = output;
+                }
+            }
+            //4. SEND THE REQUEST
+            xhr.send();
+        }
+
+
+    </script>
+
+</body>
+</html>
